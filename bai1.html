@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let n = parseInt(prompt("Nhập số lượng phần tử của mảng (n <= 50):"));
+
+    let a = [];
+    for (let i = 0; i < n; i++) {
+        a.push(parseInt(prompt("Nhập phần tử thứ " + (i + 1) + ":")));
+    }
+
+    document.write("Mảng vừa nhập là: " + a.join(", ") + "<br>");
+
+    let b = [];
+    for (let i = 0; i < a.length; i++) {
+        if (isPrime(a[i])) {
+            b.push(a[i]);
+        }
+    }
+    document.write("Các số nguyên tố trong mảng là: " + b.join(", "));
+</script>
+</body>
+</html>

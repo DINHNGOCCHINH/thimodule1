@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bai3.css">
+</head>
+<body>
+<div class="form-customer">
+    <h2>Thông tin khách hàng</h2>
+    <form>
+    <label>Mã số</label>
+    <input type="text" id="customerid" name="customerid">
+    <br>
+    <label>Họ và tên</label>
+    <input type="text" id="fullname" name="fullname">
+    <br>
+
+    <label>Loại tiết kiệm</label>
+    <input type="text" id="type" name="type">
+    <br>
+
+    <label>CMT/CCCD</label>
+    <input type="number" id="cardid" name="cardid">
+    <br>
+
+    <label>Ngày mở sổ</label>
+    <input type="date" name="date" id="date">
+    <br>
+
+    <label>Số tiền gửi</label>
+    <input type="number" id="money" name="money">
+    <br>
+    <label>&nbsp;</label>
+    <button id="save" onclick="save()">Thêm</button>
+    </form>
+</div>
+
+<div class="list-customer">
+    <h2>Danh sách khách hàng</h2>
+    <table id="list-customer" width="600px" border="1px">
+        <tr>
+            <th>STT</th>
+            <th>Mã số</th>
+            <th>Họ và tên</th>
+            <th>Loại tiết kiệm</th>
+            <th>Chứng minh nhân dân</th>
+            <th>Ngày mở sổ</th>
+            <th>Số tiền gửi</th>
+            <th>Tuỳ chọn</th>
+        </tr>
+    </table>
+</div>
+
+<script src="bai3.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function simplifyFraction(numerator, denominator) {
+        let gcd = greatestCommonDivisor(numerator, denominator);
+        return [numerator / gcd, denominator / gcd];
+    }
+
+    function greatestCommonDivisor(a, b) {
+        if (b === 0) {
+            return a;
+        }
+        return greatestCommonDivisor(b, a % b);
+    }
+    function inputFraction1() {
+        let numerator1 = parseInt(prompt("Nhập tử số của phân số thứ nhất:"));
+        let denominator1 = parseInt(prompt("Nhập mẫu số của phân số thứ nhất:"));
+        return [numerator1, denominator1];
+    }
+    function inputFraction2() {
+        let numerator2 = parseInt(prompt("Nhập tử số của phân số thứ hai:"));
+        let denominator2 = parseInt(prompt("Nhập mẫu số của phân số thứ hai:"));
+        return [numerator2, denominator2];
+    }
+    function fractionsEqual(numerator1, denominator1, numerator2, denominator2) {
+        let simplified1 = simplifyFraction(numerator1, denominator1);
+        let simplified2 = simplifyFraction(numerator2, denominator2);
+        return simplified1[0] === simplified2[0] && simplified1[1] === simplified2[1];
+    }
+
+    let fraction1 = inputFraction1();
+    let fraction2 = inputFraction2();
+    if (fractionsEqual(fraction1[0], fraction1[1], fraction2[0], fraction2[1])) {
+        document.write("Hai phân số bằng nhau.");
+    } else {
+        document.write("Hai phân số không bằng nhau.");
+    }
+</script>
+
+
+</body>
+</html>
